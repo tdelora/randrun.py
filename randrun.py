@@ -1,11 +1,11 @@
-import random
+import rr_random
 
 def  main():
 
     count = 100
 
     while count:
-        rNum = random.randint(1,9)
+        rNum = rr_random.rr_rand_lim(9)
 
         print(rNum)
         count-=1
