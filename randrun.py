@@ -1,4 +1,4 @@
-import rr_random
+import rr_random, rr_nouns_verbs
 
 def  main():
 
@@ -7,9 +7,9 @@ def  main():
     # rr_random.rr_init_rand(10)
 
     while count:
-        rNum = rr_random.rr_rand_lim(9)
+        natsNoun = rr_nouns_verbs.rr_get_randon_nats_noun()
 
-        print(rNum)
+        print(natsNoun)
         count-=1
 
 
