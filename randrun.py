@@ -1,5 +1,5 @@
 import argparse
-import rr_random, rr_nats_nouns_verbs
+import rr_random, rr_nats_nouns_verbs, rr_logging
 
 def  main():
     parser = argparse.ArgumentParser()
@@ -17,7 +17,7 @@ def  main():
     while count:
         natsNoun = rr_nats_nouns_verbs.rr_get_randon_nats_noun()
 
-        print(natsNoun)
+        rr_logging.rr_writeWorkLine(natsNoun)
         count-=1
 
 
