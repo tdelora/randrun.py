@@ -2,9 +2,6 @@ import argparse, sys
 import rr_random, rr_nats_nouns_verbs, rr_logging
 
 def  main():
-    if  not sys.__stdin__.isatty():
-        print("\nFile read not implemented")
-        exit(1)
 
     parser = argparse.ArgumentParser()
 
@@ -14,15 +11,19 @@ def  main():
 
     count = int(args.maxSteps)
     randSeed = int(args.randomSeed)
-    
+
     if randSeed != 0:
         rr_random.rr_init_rand(randSeed)
 
-    while count:
-        natsNoun = rr_nats_nouns_verbs.rr_get_randon_nats_noun()
+    if  not sys.__stdin__.isatty():
+        print("\nFile read not implemented")
+        exit(1)
+    else:
+        while count:
+            natsNoun = rr_nats_nouns_verbs.rr_get_randon_nats_noun()
 
-        rr_logging.rr_writeWorkLine(natsNoun)
-        count-=1
+            rr_logging.rr_writeWorkLine(natsNoun)
+            count-=1
 
 
 if __name__ == '__main__':
