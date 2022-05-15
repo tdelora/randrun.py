@@ -16,14 +16,30 @@ def  main():
         rr_random.rr_init_rand(randSeed)
 
     if  not sys.__stdin__.isatty():
-        print("\nFile read not implemented")
-        exit(1)
+        readFromFile()
     else:
-        while count:
-            natsNoun = rr_nats_nouns_verbs.rr_get_randon_nats_noun()
+        generateRandomly(count)
+        
+    exit(0)
 
-            rr_logging.rr_writeWorkLine(natsNoun)
-            count-=1
+
+def readFromFile():
+    # Done with file variable in case we decide to add a file open down the line
+    inputFile = sys.stdin
+
+    line = inputFile.readline()
+    while line:
+        print(line,end="")
+        line = inputFile.readline()
+
+
+def generateRandomly(count):
+    steps = count
+    while steps:
+        natsNoun = rr_nats_nouns_verbs.rr_get_randon_nats_noun()
+
+        rr_logging.rr_writeWorkLine(natsNoun)
+        steps-=1
 
 
 if __name__ == '__main__':
