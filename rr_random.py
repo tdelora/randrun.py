@@ -1,7 +1,7 @@
 import random
 
-def rr_init_rand(seed):
+def init_rand(seed):
     random.seed(seed)
 
-def rr_rand_lim(upperLimit):
+def rand_lim(upperLimit):
     return(random.randint(0,upperLimit))

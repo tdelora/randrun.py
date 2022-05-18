@@ -1,11 +1,11 @@
 import rr_constant
 
 
-def rr_writeWorkLine(line):
+def writeWorkLine(line):
     print("{}{}".format(rr_constant.RR_LOG_WORK_PREPEND,line))
 
-def rr_writeErrorLine(line):
+def writeErrorLine(line):
     print(line)
 
-def rr_writeOutputLine(line):
+def writeOutputLine(line):
     print(line)

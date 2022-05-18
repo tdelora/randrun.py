@@ -13,7 +13,7 @@ def  main():
     randSeed = int(args.randomSeed)
 
     if randSeed != 0:
-        rr_random.rr_init_rand(randSeed)
+        rr_random.init_rand(randSeed)
 
     if  not sys.__stdin__.isatty():
         readFromFile()
@@ -29,16 +29,16 @@ def readFromFile():
 
     line = inputFile.readline()
     while line:
-        print(line,end="")
+        rr_nats_nouns_verbs.check_execute_nats_noun_verb_line(line)
         line = inputFile.readline()
 
 
 def generateRandomly(count):
     steps = count
     while steps:
-        natsNoun = rr_nats_nouns_verbs.rr_get_randon_nats_noun()
+        natsNoun = rr_nats_nouns_verbs.get_randon_nats_noun()
 
-        rr_logging.rr_writeWorkLine(natsNoun)
+        rr_logging.writeWorkLine(natsNoun)
         steps-=1
 
 
