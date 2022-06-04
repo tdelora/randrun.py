@@ -37,8 +37,7 @@ def generateRandomly(count):
     steps = count
     while steps:
         natsNoun = rr_nats_nouns_verbs.get_randon_nats_noun()
-
-        rr_logging.writeWorkLine(natsNoun)
+        rr_nats_nouns_verbs.execute_nats_noun_verb_line(natsNoun)
         steps-=1
 
 

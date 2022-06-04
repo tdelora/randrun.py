@@ -1,6 +1,5 @@
 import rr_constant, rr_logging, rr_random
 
-
 rr_nats_nouns = ("NATS_INIT", "NATS_CONNECTION", "NATS_PUBLISHER", "NATS_SUBSCRIBER")
 
 def get_randon_nats_noun():
